@@ -2,11 +2,14 @@
 <input id="Guessnumber">
 <button onclick="Check()">Check</button>
 <p id = "result">You are wrong/right</p>
+<p id="Score">Score:10</p>
 
 <script>
     var Guessnumber = document.getElementById("Guessnumber")
     var result = document.getElementById("result")
+    var Score = document.getElementById("Score")
     var randomNumber = Math.floor(Math.random()*10)+1
+    var totalScore = 10
     function Check()
     {
         var enterednumber = Guessnumber.value
@@ -16,6 +19,8 @@
             alert("You won")
         }
         else{
+            totalScore = totalScore-1
+            Score.textContent = "Score:"+totalScore
             console.log("Wrong")
             result.textContent = "Wrong"
         }
